@@ -203,15 +203,6 @@ Get this from the settings area when logged into <a href="http://particle.io/bui
    
    
 
-<input type="button" value="digitalWrite(D7,HIGH);" onClick="{
-    sendToParticle('digitalWrite(D7,HIGH);')
-}">
-
-<input type="button" value="digitalWrite(D7,LOW);" onClick="{
-    sendToParticle('digitalWrite(D7,LOW);')
-}"><br> Can also use on and off or 1 and 0
-
-
 <input type="button" value="digitalWrite(d7,1);" onClick="{
     sendToParticle('digitalWrite(d7,1);')
 }">
@@ -226,7 +217,26 @@ Get this from the settings area when logged into <a href="http://particle.io/bui
 <input type="button" value="digitalWrite(d5,0);" onClick="{
     sendToParticle('digitalWrite(d5,0);')
 }"><br><br>
-Note that Advanced users can also use the pin numbers, so D7 = pin 7 on Photon but D7 = GPIO 19 on the Raspberry PI<br><br>   
+
+   
+
+   
+<input type="button" value="digitalRead(D6);" onClick="{
+    sendToParticle('digitalRead(D6);')
+}"><br><br>
+     
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   Note that Advanced users can also use the pin numbers, so D7 = pin 7 on Photon but D7 = GPIO 19 on the Raspberry PI<br><br>   
    
    
    
@@ -242,16 +252,30 @@ Note that Advanced users can also use the pin numbers, so D7 = pin 7 on Photon b
    
    
    
-<input type="button" value="digitalRead(D6);" onClick="{
-    sendToParticle('digitalRead(D6);')
+<input type="button" value="digitalRead(D3);" onClick="{
+    sendToParticle('digitalRead(D3);')
 }"><br><br>
   
    
-<input type="button" value="analogRead(A0);" onClick="{
-    sendToParticle('analogRead(A0);')
+<input type="button" value="analogRead(A3);" onClick="{
+    sendToParticle('analogRead(A3);')
 }">   Photon Direct Analog input, PI uses capactive Input both returns 0-4095<br>
      
-   
+  <input type="button" value="analogWrite(A5,255);" onClick="{
+    sendToParticle('analogWrite(A5,255);')
+}"> <br> <br>
+  
+   <input type="button" value="analogWrite(A5,200);" onClick="{
+    sendToParticle('analogWrite(A5,200);')
+}"> <br> <br>
+
+<input type="button" value="analogWrite(A5,100);" onClick="{
+    sendToParticle('analogWrite(A5,100);')
+}"> <br> <br>
+  
+<input type="button" value="analogWrite(A5,0);" onClick="{
+    sendToParticle('analogWrite(A5,0);')
+}"> <br> <br>
    
    
 
