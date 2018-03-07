@@ -211,6 +211,13 @@ Digital Buttons<br> <br>
 }"><br><br>
   
    
+<input type="button" value="digitalWrite(d4,1);" onClick="{
+    sendToParticle('digitalWrite(d4,1);')
+}">
+<input type="button" value="digitalWrite(d4,0);" onClick="{
+    sendToParticle('digitalWrite(d4,0);')
+}"><br><br>
+   
          <input type="button" value="digitalWrite(d5,1);" onClick="{
     sendToParticle('digitalWrite(d5,1);')
 }">
@@ -241,7 +248,10 @@ Analog Buttons <br><br>
      <input type="button" value="analogWrite(A4,255);" onClick="{
     sendToParticle('analogWrite(A4,255);')
 }"> 
-  
+       
+  <input type="button" value="analogWrite(A4,255);" onClick="{
+    sendToParticle('analogWrite(A4,155);')
+}"> 
 
 <input type="button" value="analogWrite(A4,100);" onClick="{
     sendToParticle('analogWrite(A4,100);')
