@@ -205,6 +205,16 @@ Digital Buttons<br> <br>
     sendToParticle('digitalWrite(D0,0);')
 }">   <br><br>
 
+   <input type="button" value="Reset" onClick="{
+    sendToParticle('digitalWrite(D1,1);')
+    sendToParticle('digitalWrite(D2,1);')                                       
+    sendToParticle('digitalWrite(D3,1);')                                      
+    sendToParticle('digitalWrite(D4,1);')                                      
+    sendToParticle('digitalWrite(D5,1);')
+    sendToParticle('digitalWrite(D6,1);')
+    sendToParticle('digitalWrite(D7,1);')
+                                           
+     }">
 
    <input type="button" value="8" onClick="{
     sendToParticle('digitalWrite(D1,0);')
