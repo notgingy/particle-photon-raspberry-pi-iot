@@ -1,0 +1,62 @@
+bool myDoPublish2  = false;
+bool myDoSubscribe = false;
+unsigned long duration; 
+
+
+void setup() {
+    pinMode(D7, OUTPUT);
+    pinMode(D6, INPUT); 
+    pinMode(D2, OUTPUT); 
+    Particle.subscribe("mss112", myD7Function); 
+}
+
+void loop() {
+    
+     //   Particle.publish("Digital Read D7 =", String(digitalRead(D7)), 60, PRIVATE);
+        delay(10);                      // even cicuits need a break 
+
+        digitalWrite(D2, HIGH);         // activate trigger 
+
+        delayMicroseconds(10); 
+
+        digitalWrite(D2, LOW);          // de-activate trigger 
+
+  
+
+        duration = pulseIn(D6, HIGH);   // how long until a reply? 
+
+                                        // a blocking call so may wait a few seconds 
+
+                                         
+
+        if (duration > 8000    ){        // raw data from 200 to 16000                                          
+
+                                        // where  2000 raw = ~35cm,  4000 raw = ~80cm                                    
+
+            digitalWrite(D7, HIGH);     // D7 Blue LED on if far 
+
+            
+            
+        } else { 
+
+            digitalWrite(D7, LOW);      // D7 Blue LED off 
+            Particle.publish("Intruder", "detected", 60, PRIVATE);
+            delay(5000);
+
+        }  
+
+
+
+
+}
+
+
+void myD7Function(const char *event, const char *data){    //Incoming from IFTTT
+    if (myDoSubscribe == true){   
+        if (String(data) == "SECRET-STUFF"){   // an attempt at security    
+          delay(2000);            // 2 second wait
+          myDoSubscribe = false;  // stop it from doing it again
+          
+        }
+     }
+}
